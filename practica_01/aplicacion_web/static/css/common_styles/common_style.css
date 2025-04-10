@@ -1,0 +1,53 @@
+:root {    
+    /* --height-header1: 8vh; */
+    /* --height-header2: 10vh; */
+    /* --height-nav: 10vh; */
+    /* --height-main-header: calc( var(--height-header1) + var(--height-header2) + var(--height-nav)); */
+    
+    /* --size-bubble-cart: 5vw;
+    --size-bubble-cart-tab: 3.5vw;
+    --size-bubble-cart-pc: 2.1vw;
+
+    --border-article: 50px;
+    --border-title: 70px;
+    --border-item: 25px;
+    --border-product: 10px;
+    --border-tag: 25px;
+    --border-menu: 10px;
+    --border-radius-element: 5px;
+
+    --font-icon-cel: 20px;
+    --font-icon-tab: 2.5vw;
+    --font-icon-pc: 1.55vw; */
+
+    /* --color1: #0C0A3E;
+    --color2: #1e1c7a;
+    --color3: #fff;
+    --color4: #2756f0;
+    --color5: #218aec;
+    --color6: #ffffff;
+    --color7: #040136;
+    --color8: #02011f;
+    --color9: #3532d3;
+    --color10: #2709ac;
+    --color-title1: #00095c;
+    --color-title2: #00223d;
+    --font1: #000;
+    --font2: #fff;
+    --font3: #fff; */
+
+    --height-header: 20vh;
+    --height-footer: 50vh;
+    --height-aside: 90vh;
+    --height-section: 1vh;
+    --color-background: #2a2b2c;
+    --color1: #006b96;
+    --color2: #002a64;
+    --color3: #c7309a;
+    --color4: #02020e;
+}
+
+
+body {
+    font-family: Poppins, sans-serif;
+}

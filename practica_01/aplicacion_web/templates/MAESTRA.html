@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/common_styles/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/static/css/common_styles/all.min.css"/>
+    <link rel="stylesheet" href="/static/css/common_styles/fontawesome.min.css"/>
+    <link rel="stylesheet" href="/static/css/common_styles/fonts.css"/>
+    <link rel="stylesheet" href="/static/css/common_styles/common_style.css"/>
+    {% block estilos %}
+    {% endblock %}
+    <title>
+        {% block titulo %}
+        {% endblock %}| xd
+    </title>
+</head>
+<body class="general_body">
+    <header class="general_element">
+    </header>
+
+    <aside class="general_element">
+    </aside>
+
+    <section class="general_element">
+        {% block contenido %}
+        {% endblock %}
+    </section>
+
+    <footer class="general_element">
+    </footer>
+
+    <script src="/static/js/common_scripts/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/common_scripts/bootstrap.min.js"></script>
+    <script src="/static/js/common_scripts/common_script.js"></script>
+    {% block scripts %}
+    {% endblock %}
+
+</body>
+</html>
