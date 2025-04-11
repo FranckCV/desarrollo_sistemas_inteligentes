@@ -19,8 +19,12 @@
 
 #include "camera_pins.h"
 
-const char* ssid = "***********************";
-const char* password = "******************";
+// const char* ssid = "CORVILL";
+// const char* password = "26210154";
+const char* ssid = "TP-Link_3B86";
+const char* password = "48871860";
+// const char* ssid = "A22_fcv";
+// const char* password = "12345679";
 
 void startCameraServer();
 

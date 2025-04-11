@@ -113,6 +113,46 @@ def handle_mostrar_valor():
     except Exception as e:
         print(f"[✘] Error: {e}")
 
+# @socketio.on("mostrar_valor")
+# def handle_mostrar_valor():
+#     try:
+#         response = requests.get(ESP32_URL, timeout=10)
+        
+#         if response.status_code == 200:
+#             img_array = np.asarray(bytearray(response.content), dtype=np.uint8)
+#             frame = cv2.imdecode(img_array, cv2.IMREAD_COLOR)
+
+#             face_locations = face_recognition.face_locations(frame)
+#             face_encodings = face_recognition.face_encodings(frame, face_locations)
+
+#             if not face_encodings:
+#                 print("[❗] No se detectaron rostros en la imagen capturada.")
+#             else:
+#                 for face_encoding in face_encodings:
+#                     nombre = "Desconocido"
+#                     matches = face_recognition.compare_faces(encodings_muestras, face_encoding, tolerance=0.5)
+
+#                     if True in matches:
+#                         idx = matches.index(True)
+#                         nombre = nombres_muestras[idx]
+                    
+#                     print(f"[⚡] Rostro reconocido: {nombre}")
+#                     emit("muestra", {"nombre_muestra": nombre})
+
+#             # Guardar imagen capturada (opcional)
+#             # now = datetime.now().strftime("%Y%m%d_%H%M%S")
+#             # ruta = os.path.join(CAPTURAS_DIR, f"foto_{now}.jpg")
+#             # cv2.imwrite(ruta, frame)
+
+#         else:
+#             print(f"[✘] Error HTTP: {response.status_code}")
+
+#     except Exception as e:
+#         print(f"[✘] Error de captura o reconocimiento: {str(e)}")
+
+#     # time.sleep(0.5)
+
+
 
 if __name__ == "__main__":
     socketio.run(app, port=8000, debug=True)

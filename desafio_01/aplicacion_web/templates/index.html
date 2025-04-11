@@ -12,6 +12,8 @@ Homepage
 
 {% block contenido %}
 
+<!-- <button id="btn_mostrar">Actualizar</button> -->
+
 <div class="container_photo">
     <img src="/static/muestras/" >
 </div>
@@ -25,6 +27,24 @@ Homepage
 
 
 {% block scripts %}
+<!-- <script>
+    const socket = io();
+
+    socket.on("muestra", function (data) {
+        var nombre = data.nombre_muestra;
+        console.log(nombre);
+        document.getElementById("nombre_muestra").textContent = nombre.toUpperCase();
+        document.querySelector('.container_photo img').src = `/static/muestras/${nombre}.jpg`;
+    });
+
+    // document.getElementById("btn_mostrar").addEventListener("click", function () {
+    setInterval(() => {
+        socket.emit("mostrar_valor");
+    }, 100);
+    // });
+
+</script> -->
+
 
 <script>
     const socket = io();
