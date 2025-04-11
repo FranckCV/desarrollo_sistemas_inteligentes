@@ -1,17 +1,13 @@
 from flask import Flask, render_template, request, redirect, flash, jsonify, session, make_response,  redirect, url_for
 from flask_socketio import SocketIO , emit , send
-from datetime import datetime, date
 import numpy as np
 import os
-import time
 import requests
 import cv2
 import face_recognition
 
 
-# Configuración
-DIRECCION_IP = '192.168.254.51'  # Cambia a tu IP real del ESP32-CAM
-ESP32_URL = f'http://{DIRECCION_IP}/capture'
+ESP32_URL = f'http://192.168.254.51/capture'
 
 BASE_DIR = os.path.dirname(__file__)
 MUESTRAS_DIR = os.path.join(BASE_DIR, "static/muestras")
@@ -55,10 +51,9 @@ print(f"[✔] Total de muestras válidas: {len(encodings_muestras)}\n")
 
 
 TIEMPO_ESPERA_SEG = 0.5
-nombre_muestra = 'gil'
 
 
-app = Flask(__name__, template_folder='templates')
+app = Flask(__name__)
 socketio = SocketIO(app)
 
 
