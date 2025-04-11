@@ -9,11 +9,6 @@ import cv2
 import face_recognition
 
 
-
-
-
-
-
 # Configuración
 DIRECCION_IP = '192.168.254.51'  # Cambia a tu IP real del ESP32-CAM
 ESP32_URL = f'http://{DIRECCION_IP}/capture'
