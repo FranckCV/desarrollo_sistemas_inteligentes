@@ -1,0 +1,88 @@
+{% extends "MAESTRA.html" %}
+
+
+{% block titulo %}
+Stream
+{% endblock %}
+
+
+{% block estilos %}
+{% endblock %}
+
+
+{% block contenido %}
+
+<input type="hidden" id="persona_id" name="persona_id" value="{{per_id}}">
+
+<div class="container_imgs">
+    <div class="block block_stream">
+        <p>Stream ESP32-CAM</p>
+        <div class="container_stream">
+            <img src="{{ESP32_URL_STREAM}}">
+        </div>
+    </div>
+
+    <div class="block block_new_photos">
+        <p>Imagenes capturadas</p>
+        <div class="container_new_photos">
+
+        </div>
+    </div>
+</div>
+
+<button id="btn_iniciar">Iniciar</button>
+<button id="btn_detener">Detener</button>
+
+<form action="{{url_for('terminar_guardar')}}" method="post">
+    <button type="submit" class="button is-primary mt-2" id="btn_terminar">Terminar</button>
+</form>
+<a href="{{url_for('stream')}}" class="button is-primary mt-2">Volver</a>
+
+
+{% endblock %}
+
+
+
+{% block scripts %}
+
+
+<script>
+    const socket = io();
+
+    const per_id = document.getElementById("persona_id").value;
+
+    function iniciarCaptura() {
+        socket.emit("guardar_y_actualizar", { per_id: per_id });
+    }
+
+    socket.on("lista_fotos", function (data) {
+        const contenedor = document.querySelector(".container_new_photos");
+        contenedor.innerHTML = "";  
+
+        data.fotos.forEach(nombre => {
+            contenedor.innerHTML += `
+            <img src="/static/muestras/${nombre}" alt="${nombre}">
+        `;
+        });
+    });
+
+    let intervalo = null;
+
+    document.getElementById("btn_iniciar").addEventListener("click", () => {
+        if (!intervalo) {
+            intervalo = setInterval(iniciarCaptura, 3000);
+        }
+    });
+
+    document.getElementById("btn_detener").addEventListener("click", () => {
+        clearInterval(intervalo);
+        intervalo = null;
+    });
+
+    document.getElementById("btn_terminar").addEventListener("click", () => {
+        clearInterval(intervalo);
+        intervalo = null;
+    });
+</script>
+
+{% endblock %}

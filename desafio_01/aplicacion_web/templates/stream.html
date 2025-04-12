@@ -1,0 +1,65 @@
+{% extends "MAESTRA.html" %}
+
+
+{% block titulo %}
+Stream
+{% endblock %}
+
+
+{% block estilos %}
+{% endblock %}
+
+
+{% block contenido %}
+
+<!-- <button id="btn_mostrar">Actualizar</button> -->
+
+<div class="container_imgs">
+
+    <div class="block block_stream">
+        <p>Stream ESP32-CAM</p>
+        <div class="container_stream">
+            <img src="{{ESP32_URL_STREAM}}">
+        </div>
+
+        <p>
+            Rostro detectado
+        </p>
+
+    </div>
+
+    <div class="block block_photo">
+        <p>Coincidencia encontrada</p>
+        <div class="container_photo">
+            <img src="/static/muestras/">
+        </div>
+        <p> Foto que coincide:
+            <span id="nombre_muestra">Esperando...</span>
+        </p>
+    </div>
+
+    <div class="block block_person">
+        <p>Persona reconocida</p>
+        <div class="container_person">
+            <img src="/static/muestra/default.jpg">
+        </div>
+        <p> Persona:
+            <span id="nombre_persona">Esperando...</span>
+        </p>
+    </div>
+
+</div>
+
+
+
+
+
+{% endblock %}
+
+
+
+{% block scripts %}
+
+<script src="/static/js/sync.js"></script>
+
+{% endblock %}

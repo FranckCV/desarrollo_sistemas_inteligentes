@@ -12,11 +12,17 @@
     {% endblock %}
     <title>
         {% block titulo %}
-        {% endblock %}| xd
+        {% endblock %}| Reconocimiento
     </title>
 </head>
 <body class="general_body">
     
+    <header>
+        <a href="{{url_for('index')}}">index</a>
+        <a href="{{url_for('stream')}}">stream</a>
+        <a href="{{url_for('add')}}">Add</a>
+    </header>
+
     <section class="general_element">
         {% block contenido %}
         {% endblock %}

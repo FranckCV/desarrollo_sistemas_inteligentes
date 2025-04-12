@@ -2,7 +2,7 @@
 
 
 {% block titulo %}
-Homepage
+Index
 {% endblock %}
 
 
@@ -14,8 +14,10 @@ Homepage
 
 <!-- <button id="btn_mostrar">Actualizar</button> -->
 
-<div class="container_photo">
-    <img src="/static/muestras/" >
+<div class="container_imgs">
+    <div class="container_photo">
+        <img src="/static/muestras/" >
+    </div>
 </div>
 
 <p>Rostro detectado:
@@ -27,59 +29,8 @@ Homepage
 
 
 {% block scripts %}
-<!-- <script>
-    const socket = io();
 
-    socket.on("muestra", function (data) {
-        var nombre = data.nombre_muestra;
-        console.log(nombre);
-        document.getElementById("nombre_muestra").textContent = nombre.toUpperCase();
-        document.querySelector('.container_photo img').src = `/static/muestras/${nombre}.jpg`;
-    });
-
-    // document.getElementById("btn_mostrar").addEventListener("click", function () {
-    setInterval(() => {
-        socket.emit("mostrar_valor");
-    }, 100);
-    // });
-
-</script> -->
-
-
-<script>
-    const socket = io();
-
-    let intervalo;
-
-    function iniciarSocket() {
-        // Emitir cada 3 segundos (más estable)
-        intervalo = setInterval(() => {
-            socket.emit("mostrar_valor");
-        }, 3000);
-    }
-
-    socket.on("connect", () => {
-        console.log("[✔] Conectado al servidor");
-        iniciarSocket();
-    });
-
-    socket.on("disconnect", () => {
-        clearInterval(intervalo);
-        console.log("[✘] Desconectado del servidor");
-    });
-
-    socket.on("muestra", function (data) {
-        const nombre = data.nombre_muestra;
-        document.getElementById("nombre_muestra").textContent = nombre.toUpperCase();
-
-        const img = document.querySelector('.container_photo img');
-        if (nombre !== "Desconocido") {
-            img.src = `/static/muestras/${encodeURIComponent(nombre)}.jpg`;
-        } else {
-            img.src = "/static/muestras/default.jpg";
-        }
-    });
-</script>
+<script src="/static/js/sync.js"></script>
 {% endblock %}
 
 

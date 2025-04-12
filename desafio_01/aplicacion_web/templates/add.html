@@ -1,0 +1,36 @@
+{% extends "MAESTRA.html" %}
+
+
+{% block titulo %}
+Stream
+{% endblock %}
+
+
+{% block estilos %}
+{% endblock %}
+
+
+{% block contenido %}
+
+<form action="{{url_for('guardar_persona')}}" method="post">
+
+    <label for="nombre">Nombre de nueva persona:</label>
+    <input required type="text" class="input" placeholder="Nombre" name="nombre" id="nombre">
+
+    <button type="submit" class="button is-success mt-2">Guardar</button>
+    <a href="{{url_for('stream')}}" class="button is-primary mt-2">Volver</a>
+
+</form>
+
+{% endblock %}
+
+
+
+{% block scripts %}
+
+<!-- <script src="/static/js/sync.js"></script> -->
+
+{% endblock %}
+
+
+
